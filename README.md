@@ -108,4 +108,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Author
 
-- AdityaSharma2168 
+- Aditya and Lokesh
