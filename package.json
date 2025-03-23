@@ -1,0 +1,13 @@
+{
+  "name": "repoai",
+  "version": "0.1.0",
+  "description": "RepoAI - A collection of modular, ready-to-use AI tools",
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "start:backend": "cd backend && python -m uvicorn app.main:app --reload",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && pip install -r requirements.txt"
+  },
+  "author": "",
+  "license": "MIT"
+} 

@@ -78,8 +78,7 @@ function Layout() {
   const menuItems = [
     { text: 'Dashboard', icon: <HomeIcon />, path: '/' },
     { text: 'AI Tools', icon: <PsychologyIcon />, path: '/tools' },
-    { text: 'Plugins', icon: <CodeIcon />, path: '/plugins' },
-    { text: 'Upload Plugin', icon: <UploadIcon />, path: '/plugins/upload' },
+    { text: 'Upload Tool', icon: <UploadIcon />, path: '/tools/upload' },
   ];
 
   return (

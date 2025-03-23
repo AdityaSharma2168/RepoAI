@@ -28,12 +28,18 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
     DEBUG: bool = ENVIRONMENT == "development"
     
+    # Use SQLite for local development
+    USE_SQLITE: bool = os.getenv("USE_SQLITE", "True").lower() == "true"
+    
     class Config:
         env_file = ".env"
         
     @property
     def sqlalchemy_database_url(self) -> str:
-        if self.DATABASE_URL:
+        if self.USE_SQLITE:
+            # Use SQLite for local development
+            return "sqlite:///./repoai.db"
+        elif self.DATABASE_URL:
             return self.DATABASE_URL
         return f"postgresql://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
 
